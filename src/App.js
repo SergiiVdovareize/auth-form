@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.css';
 import AuthForm from './components/AuthForm';
 
 const App = () => {

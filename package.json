@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "postdeploy": "echo 'Form deployment initialized"
+    "postdeploy": "echo 'Auth Form deployment initialized'"
   },
   "eslintConfig": {
     "extends": [

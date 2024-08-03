@@ -1,0 +1,147 @@
+body, html {
+  background: linear-gradient(167.96deg, #F4F9FF 0%, #E0EDFB 100%);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #4a4e71;
+  font-size: 20px;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__content {
+  text-align: center;
+  padding: 2em;
+  /* width: 500px; */
+  min-width: 500px;
+}
+
+.auth__input {
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 0;
+  outline: red;
+  margin-bottom: 1.2em;
+}
+
+/* .auth__input:not(:last-child) {
+} */
+
+/* .auth__input:not(:first-child) {
+  margin-top: 0.7em;
+} */
+
+.auth__input::placeholder {
+  color: #6f91bc;
+}
+
+.auth__input:focus {
+  /* border: 2px #161d51 solid; */
+  box-shadow: inset 0 0 0 2px #161d51;
+}
+
+.auth__input.auth__input_valid {
+  box-shadow: inset 0 0 0 2px #5CD6C0;
+  background-color: #effbf9;
+  color: #5CD6C0;
+}
+
+.auth__input.auth__input_invalid {
+  box-shadow: inset 0 0 0 2px #ED5F59;
+  background-color: #fdefee;
+  color: #ED5F59;
+}
+
+.validation {
+  text-align: left;
+  padding: 0 1em;
+  margin-bottom: 1.2em;
+}
+
+.validation_hidden {
+  display: none;
+}
+
+.validation__item:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.auth__submit {
+  border-top-left-radius: 1.5em 50%;
+  border-bottom-left-radius: 1.5em 50%;
+  border-top-right-radius: 1.5em 50%;
+  border-bottom-right-radius: 1.5em 50%;
+  padding: 1em;
+  width: 80%;
+  border: 0;
+  background: linear-gradient(130deg, #70c3ff, #4f6eff);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 0.6em;
+}
+
+.auth__input-with-icon {
+  position: relative;
+}
+
+.password-toggle {
+  border: 0;
+  background-color: transparent;
+  background-size: cover;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  position: absolute;
+  top: 1.3em;
+  right: 1em;
+}
+
+.password-toggle_closed {
+  background-image: url(/public/images/closed-eye.svg);
+}
+
+.password-toggle_open {
+  background-image: url(/public/images/open-eye.svg);
+}
+
+.validation__item-valid {
+  color: rgba(39, 178, 116, 0.7);
+}
+
+.validation__item-invalid {
+  color: rgba(255, 128, 128, 1);
+}
+
+@media (max-width: 800px) {
+  body, html {
+    font-size: 16px;
+  }
+
+  .auth__content {
+    padding: 1em;
+    min-width: 300px;
+  }
+
+  .password-toggle {
+    top: 0.9em;
+  }
+
+  .auth__input:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+
+  .validation {
+    margin-bottom: 0.8em;
+  }
+}
