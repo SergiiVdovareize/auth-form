@@ -21,7 +21,7 @@ describe('ValidationService', () => {
                 spaces: true,
                 digits: true,
                 lowerCase: true,
-                upperCase: true
+                upperCase: true,
             });
         });
 

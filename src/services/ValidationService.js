@@ -3,14 +3,15 @@ import ValidationRegex from "./ValidationRegex";
 const validationService = {
     validateForm(data) {
         const passwordValidation = this.validatePassword(data.password);
+
         return {
             email: {
-                isValid: this.isEmailValid(data.email)
+                isValid: this.isEmailValid(data.email),
             },
             password: {
                 isValid:  Object.values(passwordValidation).every(value => value === true),
-                data: passwordValidation
-            }
+                data: passwordValidation,
+            },
         };
     },
     
@@ -27,7 +28,7 @@ const validationService = {
             lowerCase: ValidationRegex.LOWER_CASE.test(value),
             upperCase: ValidationRegex.UPPER_CASE.test(value),
         };
-    }
+    },
 };
 
 export default validationService;
