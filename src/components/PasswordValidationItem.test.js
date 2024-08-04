@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import PasswordValidationItem from './PasswordValidationItem';
 
-describe('password validation item', () => {
+describe('PasswordValidationItem', () => {
     const defaultProps = {
         errorMessage: 'plain error message',
         isSubmitted: false,

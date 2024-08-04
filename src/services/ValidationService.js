@@ -2,7 +2,7 @@ import ValidationRegex from "./ValidationRegex";
 
 const validationService = {
     validateForm(data) {
-        const passwordValidation = this.validatePassword(data.password)
+        const passwordValidation = this.validatePassword(data.password);
         return {
             email: {
                 isValid: this.isEmailValid(data.email)
@@ -11,7 +11,7 @@ const validationService = {
                 isValid:  Object.values(passwordValidation).every(value => value === true),
                 data: passwordValidation
             }
-        }
+        };
     },
     
     isEmailValid(value) {
@@ -26,8 +26,8 @@ const validationService = {
             digits: ValidationRegex.DIGIT.test(value),
             lowerCase: ValidationRegex.LOWER_CASE.test(value),
             upperCase: ValidationRegex.UPPER_CASE.test(value),
-        }
+        };
     }
-}
+};
 
-export default validationService
+export default validationService;

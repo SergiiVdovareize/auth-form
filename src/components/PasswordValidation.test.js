@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import PasswordValidation from './PasswordValidation';
 import PasswordValidationItem from './PasswordValidationItem';
 
-// jest.mock('./PasswordValidationItem', () => ({ errorMessage, isSubmitted, isValid }) => <div data-testid="mocked-validation-item">{errorMessage}</div>);
 jest.mock('./PasswordValidationItem')
-describe.only('password validation', () => {
+
+describe('PasswordValidation', () => {
 
     const defaultProps = {
         passwordValidation: {

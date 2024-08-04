@@ -66,6 +66,7 @@ const AuthForm = () => {
         <div className="auth__content">
             <h2 className="auth__header">Sign up</h2>
             <input type="email" name="email" placeholder="Enter email"
+                data-testid="email-field"
                 className={getEmailFieldClassList()}
                 ref={emailRef}
                 defaultValue={email}
@@ -79,20 +80,22 @@ const AuthForm = () => {
 
             <div className="auth__input-with-icon">
                 <input type={passwordVisibility ? 'text' : 'password'} name="password" placeholder="Create your password"
+                    data-testid="password-field"
                     className={getPasswordFieldClassList()} 
                     ref={passwordRef}
                     maxLength={64}
                     defaultValue={password}
                     onChange={handlePasswordChange}/>
 
-                <input type="button" className={`password-toggle ${passwordVisibility ? 'password-toggle_open' : 'password-toggle_closed'}`}
+                <input data-testid="password-visibility" type="button"
+                    className={`password-toggle ${passwordVisibility ? 'password-toggle_open' : 'password-toggle_closed'}`}
                     onClick={togglePasswordVisibility}
                 />
             </div>
             
             <PasswordValidation passwordValidation={validationData.password.data} isSubmitted={passwordSubmitted}/>
 
-            <input type="submit" className="auth__submit" value="Sign up"/>
+            <input data-testid="submit-button" type="submit" className="auth__submit" value="Sign up"/>
         </div>        
     </form>
 };

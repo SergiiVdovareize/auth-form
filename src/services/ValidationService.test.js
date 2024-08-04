@@ -1,6 +1,4 @@
-// validationService.test.js
 import validationService from './validationService';
-import ValidationRegex from './ValidationRegex';
 
 describe('ValidationService', () => {
     describe('isEmailValid', () => {
@@ -30,7 +28,7 @@ describe('ValidationService', () => {
         it('should return correct validation for a password with spaces', () => {
             const password = 'Invalid Password7';
             const validation = validationService.validatePassword(password);
-            expect(validation.spaces).toBe(false)
+            expect(validation.spaces).toBe(false);
         });
 
         it('should return correct validation for a password without digits', () => {
