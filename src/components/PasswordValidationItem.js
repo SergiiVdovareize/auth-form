@@ -6,7 +6,7 @@ const PasswordValidationItem = ({ errorMessage, isSubmitted, isValid }) => {
         classList.push('validation__item-invalid')
     }
 
-    return <div className={classList.join(' ')}>
+    return <div data-testid="password-validation-item" className={classList.join(' ')}>
         { errorMessage }
     </div>
 };

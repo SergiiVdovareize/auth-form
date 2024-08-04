@@ -15,7 +15,7 @@ const PasswordValidation = ({ passwordValidation = {}, isSubmitted }) => {
         isValid: passwordValidation.digits,
     }]
 
-    return  <div className="validation">
+    return  <div data-testid="password-validation" className="validation">
         { itemList.map(({ key, errorMessage, isValid }) => (
             <PasswordValidationItem key={key} errorMessage={errorMessage} isSubmitted={isSubmitted} isValid={isValid}/>
         ))}
