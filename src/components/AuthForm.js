@@ -3,64 +3,64 @@ import validationService from "../services/ValidationService";
 import PasswordValidation from "./PasswordValidation";
 
 const AuthForm = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [passwordVisibility, setPasswordVisibility] = useState(false)
-    const [emailSubmitted, setEmailSubmitted] = useState(false)
-    const [passwordSubmitted, setPasswordSubmitted] = useState(false)
-    const [validationData, setValidationData] = useState({ email: {}, password: { data: {}}})
-    const emailRef = useRef(null)
-    const passwordRef = useRef(null)
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordVisibility, setPasswordVisibility] = useState(false);
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [passwordSubmitted, setPasswordSubmitted] = useState(false);
+    const [validationData, setValidationData] = useState({ email: {}, password: { data: {}}});
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
 
     useEffect(() => {
-        setValidationData(validationService.validateForm({ email, password }))
-    }, [email, password])
+        setValidationData(validationService.validateForm({ email, password }));
+    }, [email, password]);
     
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
         setEmailSubmitted(false);
-    }
+    };
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
         setPasswordSubmitted(false);
-    }
+    };
 
     const togglePasswordVisibility = () => {
-        setPasswordVisibility(!passwordVisibility)
-    }
+        setPasswordVisibility(!passwordVisibility);
+    };
 
     const handleFormSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         setEmailSubmitted(true);
         setPasswordSubmitted(true);
 
         if (!validationData.email.isValid) {
-            emailRef.current.focus()
+            emailRef.current.focus();
         } else if (!validationData.password.isValid) {
-            passwordRef.current.focus()
+            passwordRef.current.focus();
         }
-    }
+    };
 
     const getEmailFieldClassList = () => {
-        const classList = ['auth__input', 'auth__email']
+        const classList = ['auth__input', 'auth__email'];
         
         if (emailSubmitted) {
-            classList.push(validationData.email.isValid ? 'auth__input_valid' : 'auth__input_invalid')
+            classList.push(validationData.email.isValid ? 'auth__input_valid' : 'auth__input_invalid');
         }
 
-        return classList.join(' ')
-    }
+        return classList.join(' ');
+    };
 
     const getPasswordFieldClassList = () => {
-        const classList = ['auth__input', 'auth__password']
+        const classList = ['auth__input', 'auth__password'];
         
         if (passwordSubmitted) {
-            classList.push(Object.values(validationData.password.data).every(isValid => !!isValid) ? 'auth__input_valid' : 'auth__input_invalid')
+            classList.push(Object.values(validationData.password.data).every(isValid => !!isValid) ? 'auth__input_valid' : 'auth__input_invalid');
         }
 
-        return classList.join(' ')
-    }
+        return classList.join(' ');
+    };
 
     return <form className="auth" action="#" name="auth-form" onSubmit={handleFormSubmit} noValidate>
         <div className="auth__content">
@@ -97,7 +97,7 @@ const AuthForm = () => {
 
             <input data-testid="submit-button" type="submit" className="auth__submit" value="Sign up"/>
         </div>        
-    </form>
+    </form>;
 };
 
 export default AuthForm;
