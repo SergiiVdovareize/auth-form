@@ -49,7 +49,7 @@ module.exports = defineConfig({
     {
       name: 'Mobile Safari',
       use: {
-        ...devices['iPhone 13'],
+        ...devices['iPhone 14 Pro Max'],
       },
     },
 
