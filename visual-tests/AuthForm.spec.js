@@ -28,14 +28,10 @@ test('Auth Form flow', async ({ page, }) => {
   page.getByTestId("submit-button").click();
   await argosScreenshot(page, "Submitted failing data");
 
-  page.getByTestId("password-field").focus();
-  await delay(100);
-  page.keyboard.type('Wor');
-  await delay(100);
+  page.getByTestId("password-field").fill('passWor');
   await argosScreenshot(page, "Added uppercase");
 
-  page.keyboard.type('d1');
-  await delay(100);
+  page.getByTestId("password-field").fill('passWord1');
   await argosScreenshot(page, "Added digit");
 
   page.getByTestId("password-visibility").click();
