@@ -39,6 +39,7 @@ test('Auth Form flow', async ({ page, }) => {
   page.getByTestId("email-field").focus();
   await delay(100);
   page.keyboard.type('@mail.com');
+  await delay(100);
   page.getByTestId("submit-button").click();
   await argosScreenshot(page, "Submitted valid data");
 });
