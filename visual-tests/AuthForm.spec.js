@@ -15,8 +15,11 @@ test('Auth Form flow', async ({ page, }) => {
   await argosScreenshot(page, "Submitted empty fields");
 
   page.getByTestId("email-field").fill("bob");
+  await delay(100);
   page.keyboard.press('Tab');
+  await delay(100);
   page.keyboard.type('pass');
+  await delay(100);
   await argosScreenshot(page, "Cleared warnings");
 
   page.getByTestId("password-visibility").click();
@@ -28,9 +31,11 @@ test('Auth Form flow', async ({ page, }) => {
   page.getByTestId("password-field").focus();
   await delay(100);
   page.keyboard.type('Wor');
+  await delay(100);
   await argosScreenshot(page, "Added uppercase");
 
   page.keyboard.type('d1');
+  await delay(100);
   await argosScreenshot(page, "Added digit");
 
   page.getByTestId("password-visibility").click();
