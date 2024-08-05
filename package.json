@@ -12,6 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ui": "npx playwright test",
     "eject": "react-scripts eject",
     "lint": "eslint src/ visual-tests/",
     "lint:fix": "eslint src/ visual-tests/ --fix",

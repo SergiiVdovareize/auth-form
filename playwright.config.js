@@ -32,8 +32,32 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'Desktop Chrome',
       use: { ...devices['Desktop Chrome'] },
+    },
+
+    {
+      name: 'Desktop Safari',
+      use: { ...devices['Desktop Safari'] },
+    },
+
+    {
+      name: 'Desktop Edge',
+      use: { ...devices['Desktop Edge'] },
+    },
+
+    {
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 13'],
+      },
+    },
+
+    {
+      name: 'Mobile Chrome',
+      use: {
+        ...devices['Pixel 7'],
+      },
     },
 
     // {
