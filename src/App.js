@@ -7,6 +7,6 @@ const App = () => {
       <AuthForm/>
     </div>
   );
-}
+};
 
 export default App;

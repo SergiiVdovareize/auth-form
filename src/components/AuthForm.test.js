@@ -50,4 +50,4 @@ describe('Auth Form', () => {
         expect(emailField).toHaveClass('auth__input_valid');
         expect(passwordField).toHaveClass('auth__input_valid');
     });
-})
+});

@@ -24,7 +24,7 @@ test('Auth Form flow', async ({ page, }) => {
 
   page.getByTestId("password-visibility").click();
   await argosScreenshot(page, "Show password");
-
+  
   page.getByTestId("submit-button").click();
   await argosScreenshot(page, "Submitted failing data");
 

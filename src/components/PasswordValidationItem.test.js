@@ -45,4 +45,4 @@ describe('PasswordValidationItem', () => {
         expect(element).not.toHaveClass('validation__item-valid');
         expect(element).toHaveTextContent(defaultProps.errorMessage);
     });
-})
+});

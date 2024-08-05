@@ -144,4 +144,4 @@ describe('PasswordValidation', () => {
         expect(PasswordValidationItem)
             .toHaveBeenNthCalledWith(2, { errorMessage: 'Uppercase and lowercase letters', isSubmitted: false, isValid: false }, {});
     });
-})
+});
