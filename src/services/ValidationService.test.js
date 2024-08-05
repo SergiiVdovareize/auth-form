@@ -1,4 +1,4 @@
-import validationService from './validationService';
+import validationService from './ValidationService';
 
 describe('ValidationService', () => {
     describe('isEmailValid', () => {
