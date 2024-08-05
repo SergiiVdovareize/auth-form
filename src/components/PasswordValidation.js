@@ -13,13 +13,13 @@ const PasswordValidation = ({ passwordValidation = {}, isSubmitted }) => {
         key: 3,
         errorMessage: 'At least one digit',
         isValid: passwordValidation.digits,
-    }]
+    }];
 
-    return  <div data-testid="password-validation" className="validation">
+    return <div data-testid="password-validation" className="validation">
         { itemList.map(({ key, errorMessage, isValid }) => (
             <PasswordValidationItem key={key} errorMessage={errorMessage} isSubmitted={isSubmitted} isValid={isValid}/>
         ))}
-    </div>
+    </div>;
 };
 
 export default PasswordValidation;

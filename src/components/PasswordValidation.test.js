@@ -2,25 +2,24 @@ import { render, screen } from '@testing-library/react';
 import PasswordValidation from './PasswordValidation';
 import PasswordValidationItem from './PasswordValidationItem';
 
-jest.mock('./PasswordValidationItem')
+jest.mock('./PasswordValidationItem');
 
 describe('PasswordValidation', () => {
-
-    const defaultProps = {
-        passwordValidation: {
-            minLength: false,
-            maxLength: false,
-            spaces: false,
-            upperCase: false,
-            lowerCase: false,
-            digits: false,
-        },
-        isSubmitted: false,
-    };
-
     test('renders 3 invalid items', () => {
-        render(<PasswordValidation { ...defaultProps }/>);
-        const element = screen.getByTestId('password-validation')
+        const props = {
+            passwordValidation: {
+                minLength: false,
+                maxLength: false,
+                spaces: false,
+                upperCase: false,
+                lowerCase: false,
+                digits: false,
+            },
+            isSubmitted: false,
+        };
+
+        render(<PasswordValidation { ...props }/>);
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem).toHaveBeenCalledTimes(3);
@@ -46,7 +45,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem).toHaveBeenCalledTimes(3);
@@ -69,7 +68,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem)
@@ -87,7 +86,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem)
@@ -105,7 +104,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem)
@@ -122,7 +121,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem)
@@ -139,7 +138,7 @@ describe('PasswordValidation', () => {
         };
     
         render(<PasswordValidation { ...props }/>);
-        const element = screen.getByTestId('password-validation')
+        const element = screen.getByTestId('password-validation');
 
         expect(element).toHaveClass('validation');
         expect(PasswordValidationItem)

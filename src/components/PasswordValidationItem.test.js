@@ -15,7 +15,7 @@ describe('PasswordValidationItem', () => {
         };
     
         render(<PasswordValidationItem { ...props }/>);
-        const element = screen.getByTestId('password-validation-item')
+        const element = screen.getByTestId('password-validation-item');
 
         expect(element).toHaveClass('validation__item-valid');
         expect(element).not.toHaveClass('validation__item-invalid');
@@ -29,20 +29,20 @@ describe('PasswordValidationItem', () => {
         };
     
         render(<PasswordValidationItem { ...props }/>);
-        const element = screen.getByTestId('password-validation-item')
+        const element = screen.getByTestId('password-validation-item');
 
         expect(element).toHaveClass('validation__item-invalid');
         expect(element).not.toHaveClass('validation__item-valid');
-        expect(element).toHaveTextContent(defaultProps.errorMessage)
+        expect(element).toHaveTextContent(defaultProps.errorMessage);
     });
 
     test('renders default item', () => {
         render(<PasswordValidationItem { ...defaultProps }/>);
-        const element = screen.getByTestId('password-validation-item')
+        const element = screen.getByTestId('password-validation-item');
 
         expect(element).toHaveClass('validation__item');
         expect(element).not.toHaveClass('validation__item-invalid');
         expect(element).not.toHaveClass('validation__item-valid');
-        expect(element).toHaveTextContent(defaultProps.errorMessage)
+        expect(element).toHaveTextContent(defaultProps.errorMessage);
     });
 })
