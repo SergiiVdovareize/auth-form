@@ -1,5 +1,5 @@
 ## Demo
-https://auth.vdovareize.me/
+https://auth.vdovareize.me
 
 ## Installation
 1. install node v.22
